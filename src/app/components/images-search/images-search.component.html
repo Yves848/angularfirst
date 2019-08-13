@@ -1,0 +1,8 @@
+<app-search-box (searchImage)="search($event)"></app-search-box>
+<div class="d-flex flex-row flex-wrap">
+  <app-images
+  *ngFor="let image of images"
+  [image]="image">
+</app-images>
+
+</div>

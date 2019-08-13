@@ -1,0 +1,16 @@
+.form {
+  display: flex
+}
+
+.form input[type='text'] {
+  flex: 10;
+  padding: 15px;
+  margin: 15px
+}
+
+.form button {
+  flex:2;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right: 15px;
+}
