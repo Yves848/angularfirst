@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Image } from '../../models/Images';
+import { Item } from '../../models/Images';
 
 @Component({
   selector: 'app-images',
@@ -8,11 +8,18 @@ import { Image } from '../../models/Images';
 })
 export class ImagesComponent implements OnInit {
 
-  @Input() image: Image;
+  @Input() item: Item;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  setClasses() {
+    let classes = {
+      'visible' : (this.item.link !== '')
+    }
+    return classes;
   }
 
 }

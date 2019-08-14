@@ -8,9 +8,10 @@ import { SearchServiceService } from '../../search-service.service';
   styleUrls: ['./search-box.component.css']
 })
 export class SearchBoxComponent implements OnInit {
-  @Output() searchImage: EventEmitter<any> = new EventEmitter();
+  @Output() searchImage: EventEmitter<{image: string, start: string}> = new EventEmitter();
 
   image: string;
+  start: string;
 
   constructor(private searchService: SearchServiceService) { }
 
@@ -18,8 +19,8 @@ export class SearchBoxComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('submit');
-    this.searchImage.emit(this.image);
+    console.log('submit', this.start);
+    this.searchImage.emit({image: this.image, start: this.start});
   }
 
 }

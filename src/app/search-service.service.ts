@@ -1,42 +1,46 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { AngularFireDatabase  } from '@angular/fire/database';
 
-import { Image } from '../app/models/Images';
+import { Item, SearchResult} from '../app/models/Images';
+import { Plats, Plat} from '../app/models/Plats';
+import {environment} from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchServiceService {
-  CSE_API_KEY = '007439388879951561867:3ragl0fkhpm';
-  CSE_ID = 'AIzaSyDYvQx76ZvFawwKOaDeGqRClb2RJlIcsXM';
 
-  constructor(private http: HttpClient) {}
 
-  search(key: string): Observable<Image[]> {
+  constructor(private http: HttpClient, private db: AngularFireDatabase) {}
+
+  search(key: string, page: number): Observable<Item[]> {
     let parameters: string = '?q=' + encodeURIComponent(key);
-    parameters += '&cx=' + this.CSE_API_KEY;
+    parameters += '&cx=' + environment.GoogleSearch.CSE_API_KEY;
     parameters += '&imgSize=large';
     parameters += '&searchType=image';
-    parameters += '&key=' + this.CSE_ID;
+    parameters += '&key=' + environment.GoogleSearch.CSE_ID;
     parameters += '&lr=lang_fr';
-    parameters += '&start=1';
-    let images:Image[] = [];
-    const result = new Observable<Image[]>((observer) => {
+    parameters += `&start=${page}`;
+    const images: Item[] = [];
+    const result = new Observable<Item[]>((observer) => {
       const path = 'https://www.googleapis.com/customsearch/v1' + parameters;
-      this.http.get<any>(path).subscribe(res => {
+      this.http.get<SearchResult>(path).subscribe(res => {
         res.items.forEach(item => {
-          images.push({
-            url: item.link,
-            width: item.image.width,
-          height: item.image.height,
-        title: item.title});
+          images.push(item);
         });
         observer.next(images);
       });
     });
 
     return result;
+
+  }
+
+  getPlats(): Observable<Plats[]>{
+
+    return this.db.list<Plats>('N7s5F8eIhkSWNbcOxSlUG0HtC643/Plats').valueChanges();
 
   }
 

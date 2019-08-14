@@ -3,7 +3,20 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyA8oFagommLnfQHeoL8kefSd-Ng0btBO-Y',
+    authDomain: 'flymenus.firebaseapp.com',
+    databaseURL: 'https://flymenus.firebaseio.com',
+    projectId: 'flymenus',
+    storageBucket: 'flymenus.appspot.com',
+    messagingSenderId: '785466280841'
+  },
+  GoogleSearch: {
+    //CSE_API_KEY: '007439388879951561867:3ragl0fkhpm',
+    CSE_API_KEY: '007439388879951561867:3ragl0fkhpm',
+    CSE_ID: 'AIzaSyAxsSfCzhK2S34gwLKr_R92VUxKgsj-hi8'
+  }
 };
 
 /*

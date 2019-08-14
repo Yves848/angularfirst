@@ -1,0 +1,11 @@
+.visible {
+  border: 1px #fff solid;
+  margin: 3px;
+  max-height: 200px;
+  max-width: 200px;
+}
+
+.visible:hover {
+  background: #fd0000;
+  border: 1px #444 dashed;
+}
