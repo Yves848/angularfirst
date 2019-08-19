@@ -1,18 +1,14 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AngularFireDatabase  } from '@angular/fire/database';
 
-import { Item, SearchResult} from '../app/models/Images';
-import { Plats, Plat} from '../app/models/Plats';
-import {environment} from '../environments/environment';
+import { environment } from '../../environments/environment';
+import { Item, SearchResult } from '../models/Images';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SearchServiceService {
-
-
   constructor(private http: HttpClient) {}
 
   search(key: string, page: number): Observable<Item[]> {
@@ -24,7 +20,7 @@ export class SearchServiceService {
     parameters += '&lr=lang_fr';
     parameters += `&start=${page}`;
     const images: Item[] = [];
-    const result = new Observable<Item[]>((observer) => {
+    const result = new Observable<Item[]>(observer => {
       const path = 'https://www.googleapis.com/customsearch/v1' + parameters;
       this.http.get<SearchResult>(path).subscribe(res => {
         res.items.forEach(item => {
@@ -35,9 +31,5 @@ export class SearchServiceService {
     });
 
     return result;
-
   }
-
-
-
 }

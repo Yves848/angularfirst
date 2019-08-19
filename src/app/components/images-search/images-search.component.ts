@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchServiceService } from '../../search-service.service';
 
 import { Item } from '../../models/Images';
+import { SearchServiceService } from '../../services/search-service.service';
 
 @Component({
   selector: 'app-images-search',
   templateUrl: './images-search.component.html',
-  styleUrls: ['./images-search.component.css']
+  styleUrls: ['./images-search.component.css'],
 })
 export class ImagesSearchComponent implements OnInit {
   images: Item[];
