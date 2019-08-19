@@ -1,0 +1,22 @@
+.plats  {
+  display: flex;
+
+}
+
+.btnImg {
+  margin: 5px;
+}
+
+.btnImg:hover {
+
+}
+
+.imgPlat {
+  height: auto;
+  max-width: 100%;
+}
+
+.imgParent {
+  width: 300px;
+  padding: 20px;
+}

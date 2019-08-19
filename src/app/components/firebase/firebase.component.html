@@ -1,0 +1,23 @@
+<div class="plats">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>Plats</h2>
+      <div class="list-group">
+        <div class="d-flex flex-row flex-wrap ">
+          <button
+            class="btnImg list-group-item shadow-lg p-3 mb-5 bg-white rounded"
+            *ngFor="let plat of plats; let i = index"
+          >
+            <h3 class="list-group-item-heading">
+              {{ plat.Nom }}
+            </h3>
+            <p class="list-group-item-text">{{ plat.Categorie }}</p>
+            <div class="imgParent">
+              <img class="imgPlat" src="{{ plat.Image }}" alt="" />
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

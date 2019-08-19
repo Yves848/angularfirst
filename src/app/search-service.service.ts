@@ -13,7 +13,7 @@ import {environment} from '../environments/environment';
 export class SearchServiceService {
 
 
-  constructor(private http: HttpClient, private db: AngularFireDatabase) {}
+  constructor(private http: HttpClient) {}
 
   search(key: string, page: number): Observable<Item[]> {
     let parameters: string = '?q=' + encodeURIComponent(key);
@@ -38,10 +38,6 @@ export class SearchServiceService {
 
   }
 
-  getPlats(): Observable<Plats[]>{
 
-    return this.db.list<Plats>('N7s5F8eIhkSWNbcOxSlUG0HtC643/Plats').valueChanges();
-
-  }
 
 }

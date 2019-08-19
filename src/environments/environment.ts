@@ -13,9 +13,9 @@ export const environment = {
     messagingSenderId: '785466280841'
   },
   GoogleSearch: {
-    //CSE_API_KEY: '007439388879951561867:3ragl0fkhpm',
     CSE_API_KEY: '007439388879951561867:3ragl0fkhpm',
-    CSE_ID: 'AIzaSyAxsSfCzhK2S34gwLKr_R92VUxKgsj-hi8'
+    CSE_ID: 'AIzaSyBqR_wNvOw-d9B6C-icZdXR2tk4-awJNdM'
+    //CSE_ID: 'AIzaSyDZs8AQuWyQDySbNIGIqrwJf-KZE6v37kc'
   }
 };
 
