@@ -1,0 +1,44 @@
+div {
+  color: white;
+  text-align: center;
+}
+
+#container {
+  display: grid;
+  grid-template-rows: 150px 100px 75px 50px 125px 150px;
+
+  max-width: 1600px;
+  margin: 0 auto;
+  border: 1px solid black;
+
+
+}
+
+#container div {
+  padding: 30px;
+  border: 1px solid black;
+}
+
+.one {
+  background-color: darkgreen;
+}
+
+.two {
+  background-color: red;
+}
+
+.three {
+  background-color: orange;
+}
+
+.four {
+  background-color: deeppink;
+}
+
+.five {
+  background-color: brown;
+}
+
+.six {
+  background-color: blue;
+}
