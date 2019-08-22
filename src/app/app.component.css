@@ -1,44 +1,57 @@
 div {
-  color: white;
   text-align: center;
 }
 
 #container {
   display: grid;
-  grid-template-rows: 150px 100px 75px 50px 125px 150px;
-
-  max-width: 1600px;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: minmax(50px, auto);
+  grid-template-areas:
+    'app-images-search app-images-search app-images-search app-images-search app-images-search app-images-search app-images-search app-images-search'
+    'app-images-search app-images-search app-images-search app-images-search app-images-search app-images-search app-images-search app-images-search'
+    'aside app-firebase app-firebase app-firebase app-firebase app-firebase app-firebase app-firebase'
+    'aside app-firebase app-firebase app-firebase app-firebase app-firebase app-firebase app-firebase'
+    'aside app-firebase app-firebase app-firebase app-firebase app-firebase app-firebase app-firebase'
+    'aside app-firebase app-firebase app-firebase app-firebase app-firebase app-firebase app-firebase'
+    'router-outler router-outler router-outler router-outler router-outler router-outler router-outler router-outler ';
+  /* max-width: 960px;
+  height: 500px;
+ */
   margin: 0 auto;
+}
+
+app-images-search {
+  grid-area: app-images-search;
   border: 1px solid black;
-
-
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px;
 }
 
-#container div {
-  padding: 30px;
-  border: 1px solid black;
+app-firebase {
+  grid-area: app-firebase;
+  max-height: 78vh;
+  overflow: auto;
 }
 
-.one {
-  background-color: darkgreen;
+router-outlet {
+  grid-area: router-outler;
+  margin: 10px;
+  border: 1px dotted darkblue;
+  background-color: azure;
 }
 
-.two {
-  background-color: red;
+#menuPrincipal {
+  display: grid;
+  padding: 10px;
+  grid-gap: 10px;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 50px;
+  grid-area: aside;
 }
 
-.three {
-  background-color: orange;
-}
-
-.four {
-  background-color: deeppink;
-}
-
-.five {
-  background-color: brown;
-}
-
-.six {
-  background-color: blue;
+#menuPrincipal button {
+  border-radius: 8px;
+  color: bisque;
+  background-color: black;
 }
