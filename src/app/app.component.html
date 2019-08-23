@@ -1,19 +1,13 @@
 <div id="container">
+  <div id="router-outlet">
+    <router-outlet></router-outlet>
+  </div>
 
-  <app-images-search></app-images-search>
-
-
-  <app-firebase></app-firebase>
-
-
-  <router-outlet></router-outlet>
 
   <aside id="menuPrincipal">
-    <button>Plats</button>
-    <button>Menus</button>
-    <button>Programmes</button>
+    <button routerLink="/plats">Plats</button>
+    <button routerLink="/imageSearch">Menus</button>
+    <button routerLink="/plats">Programmes</button>
     <button>Tâches</button>
   </aside>
-
-
 </div>
